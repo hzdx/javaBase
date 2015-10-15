@@ -1,3 +1,0 @@
-wangwua = 40
-lisi = 31
-zhangsan = 30
