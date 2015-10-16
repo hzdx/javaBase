@@ -2,6 +2,11 @@ package study.base.io;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+/**
+ * 
+ * ByteArrayStream
+ * 字节数组流
+ */
 class ByteArrayStream
 {
 	public static void main(String[] args)
