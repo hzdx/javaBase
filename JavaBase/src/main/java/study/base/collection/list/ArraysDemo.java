@@ -10,9 +10,11 @@ class ArraysDemo
 		String[] arr = {"abc","cc","kkkk"};
 		List<String> list = Arrays.asList(arr);
 		sop("contains:"+list.contains("cc"));
+		//contains:true
 		Integer[] nums = {2,4,5};
 		List<Integer> li = Arrays.asList(nums);
 		sop(li);
+		//[2, 4, 5]
 	}
 	public static void sop(Object obj)
 	{

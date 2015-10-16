@@ -21,7 +21,7 @@ class TreeSetDemo2
 	}
 }
 
-class NewStu implements Comparable//��ӿ�ǿ����Student�߱��Ƚ���
+class NewStu implements Comparable//
 {
 	private String name;
 	private int age;
@@ -34,7 +34,7 @@ class NewStu implements Comparable//��ӿ�ǿ����Student�߱���
 	{
 		//return 0;
 		if(!(obj instanceof NewStu))
-			throw new RuntimeException("����ѧ�����");
+			throw new RuntimeException("class excetption");
 		NewStu s =(NewStu)obj;
 		if(this.age>s.age)
 			return 1;

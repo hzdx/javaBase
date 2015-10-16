@@ -13,10 +13,10 @@ class binarySearchDemo
 		list.add("kkkkk");
 		list.add("qq");
 		list.add("z");
-		Collections.sort(list);
-		sop(list);
+		Collections.sort(list);  
+		sop(list);//[aaa, abcd, kkkkk, qq, z, zz]
 		int index = Collections.binarySearch(list,"zz");
-		sop("index="+index);
+		sop("index="+index);//5
 	}
 	public static void sop(Object obj)
 	{

@@ -10,6 +10,6 @@ class CollectionToArray
 		al.add("abc2");
 		al.add("abc3");
 		String[] arr = al.toArray(new String[al.size()]);
-		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(arr));   //[abc1, abc2, abc3]
 	}
 }

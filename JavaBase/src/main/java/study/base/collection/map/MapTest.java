@@ -26,7 +26,7 @@ class Stu implements Comparable<Stu>
 	public boolean equals(Object obj)
 	{
 		if(!(obj instanceof Stu))
-			throw new ClassCastException("���Ͳ�ƥ��");
+			throw new ClassCastException("class cast exception");
 		Stu s = (Stu)obj;
 		return this.name.equals(s.name) && this.age==s.age;
 	}

@@ -2,26 +2,26 @@ package study.base.collection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-class CollectionsDemo3
+class CollectionsRepalaceDemo
 {
 	public static void main(String[] args)
 	{
-		replaceAllDemo();
+		replaceAll();
 	}
-	public static void replaceAllDemo()
+	public static void replaceAll()
 	{
 		List<String> list = new ArrayList<String>();
 		list.add("abcd");
 		list.add("aaa");
 		list.add("zz");
 		list.add("kkkkk");
-		sop(list);
+		sop(list);   //[abcd, aaa, zz, kkkkk]
 		Collections.replaceAll(list,"aaa","pp");
-		sop(list);
+		sop(list);  //[abcd, pp, zz, kkkkk]
 		Collections.reverse(list);
-		sop(list);
+		sop(list);  //[kkkkk, zz, pp, abcd]
 		Collections.fill(list,"cc");
-		sop(list);
+		sop(list);   //[cc, cc, cc, cc]
 	}
 	public static void sop(Object obj)
 	{

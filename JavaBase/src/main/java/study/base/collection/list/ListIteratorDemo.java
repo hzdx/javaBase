@@ -29,6 +29,7 @@ class ListIteratorDemo
 				li.set("java06");
 		}
 		sop(al);
+		//hasPrevious与hasNext相反
 		while(li.hasPrevious())
 		{
 			Object obj = li.previous();

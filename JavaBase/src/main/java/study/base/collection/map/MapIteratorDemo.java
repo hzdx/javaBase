@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-class MapDemo2
+class MapIteratorDemo
 {
 	public static void main(String[] args)
 	{
@@ -12,6 +12,7 @@ class MapDemo2
 		map.put("02","ioh");
 		map.put("03","yp");
 		map.put("04","ui");
+		//Map.Entry<String,String>实现迭代
 		Set<Map.Entry<String,String>> entrySet = map.entrySet();
 		Iterator<Map.Entry<String,String>> it = entrySet.iterator();
 		while(it.hasNext())

@@ -49,9 +49,9 @@ class HashSetTest
 		while(it.hasNext())
 		{
 			Person p = (Person)it.next();
-			sop(p.getName()+"::"+p.getAge());
+			sop(p.getName()+"::"+p.getAge()); //执行了equals方法
 		}
-		sop(hs.contains(new Person("lisi01",11)));
+		sop(hs.contains(new Person("lisi01",11))); //true
 		hs.remove(new Person("lisi03",13));
 		Iterator itr = hs.iterator();
 		while(itr.hasNext())

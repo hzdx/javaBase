@@ -8,6 +8,10 @@ class MapTest2
 	{
 		charCount("afalifuqfoqiouroqjorl11");
 	}
+	/**
+	 * 计算字符出现的次数
+	 *
+	 */
 	public static String charCount(String str)
 	{
 		char[] chs = str.toCharArray();
@@ -15,7 +19,7 @@ class MapTest2
 		for(int x=0;x<chs.length;x++)
 		{
 			if(!(chs[x]>='a'&&chs[x]<='z' || chs[x]>='A'&&chs[x]<='Z'))
-				continue;
+				continue; //continue跳出本次循环，进入下一次循环
 			Integer value = tm.get(chs[x]);
 			if(value==null)
 			{

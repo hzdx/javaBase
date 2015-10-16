@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+/**
+ * 
+ * CollectionsDemo
+ * Collections工具类和Comparator接口
+ */
 class CollectionsDemo
 {
 	public static void main(String[] args)
@@ -14,12 +19,14 @@ class CollectionsDemo
 		list.add("kkkkk");
 		list.add("qq");
 		list.add("z");
-		sop(list);
+		sop("list :"+list);
 		//Collections.sort(list,new StrLenComparator());
-		Collections.sort(list);
-		sop(list);
+		Collections.sort(list);  
+		sop("list after sort:"+list);   //[aaa, abcd, kkkkk, qq, z, zz]
+		Collections.sort(list,new StrLenComparator());  //[z, qq, zz, aaa, abcd, kkkkk]
+		sop("list after comparator and sort :"+list);
 		String max = Collections.max(list,Collections.reverseOrder(new StrLenComparator()));
-		sop(max);
+		sop(max);   //z
 	}
 	public static void sop(Object obj)
 	{
@@ -27,6 +34,11 @@ class CollectionsDemo
 	}
 	
 }
+/**
+ * 
+ * StrLenComparator
+ * 比较器接口
+ */
 class StrLenComparator implements Comparator<String>
 {
 	public int compare(String s1,String s2)

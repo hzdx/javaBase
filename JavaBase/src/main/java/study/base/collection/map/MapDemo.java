@@ -7,20 +7,21 @@ class MapDemo
 	public static void main(String[] args)
 	{
 		Map<String,String> map = new HashMap<String,String>();
-		System.out.println("put:"+map.put("01","zhangsan"));
-		System.out.println("put:"+map.put("01","zshn"));//�����ı����ǣ��������ء�
+		System.out.println("put:"+map.put("01","zhangsan"));//put:null
+		System.out.println("put:"+map.put("01","zshn"));//put:zhangsan
 		map.put("02","iu");
 		map.put("03","zssf");
 		map.put("04","zshsfs");
-		System.out.println(map);
+		System.out.println(map);//{01=zshn, 02=iu, 03=zssf, 04=zshsfs}
 		Collection<String> coll = map.values();
-		System.out.println(coll);
-		sop(map.remove("01"));
-		sop(map.get("05"));
+		System.out.println(coll);//[zshn, iu, zssf, zshsfs]
+		sop(map.remove("01"));//zshn
+		sop(map.get("05"));//null
 		map.put("05",null);
-		sop(map.get("05"));
+		//hashMap可以使用null为key,value
+		sop(map.get("05"));//null
 		map.put(null,"sfs");
-		sop(map.get(null));
+		sop(map.get(null));//sfs
 	}
 	public static void sop(Object obj)
 	{

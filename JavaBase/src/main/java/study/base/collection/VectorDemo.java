@@ -5,7 +5,7 @@ class VectorDemo
 {
 	public static void main(String[] args)
 	{
-		Vector v = new Vector();
+		Vector v = new Vector(); //vector是线程安全类
 		v.add("java01");
 		v.add("java02");
 		v.add("java03");

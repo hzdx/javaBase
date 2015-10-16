@@ -6,7 +6,7 @@ class TreeSetDemo3
 {
 	public static void main(String[] args)
 	{	
-		TreeSet ts = new TreeSet(new MyComparator());//���ȱȽ����Ƚϡ�
+		TreeSet ts = new TreeSet(new MyComparator());//
 		ts.add(new Student("lisi",17));
 		ts.add(new Student("jack",18));
 		ts.add(new Student("tom",22));
@@ -36,7 +36,7 @@ class MyComparator implements Comparator
 		return num;
 	}
 }
-class Student implements Comparable//��ӿ�ǿ����Student�߱��Ƚ���
+class Student implements Comparable//
 {
 	private String name;
 	private int age;
@@ -49,7 +49,7 @@ class Student implements Comparable//��ӿ�ǿ����Student�߱��
 	{
 		//return 0;
 		if(!(obj instanceof Student))
-			throw new RuntimeException("����ѧ�����");
+			throw new RuntimeException("class incorrect");
 		Student s =(Student)obj;
 		if(this.age>s.age)
 			return 1;
