@@ -11,8 +11,8 @@ public class IOCTest {
 		InputStream is = IOCTest.class.getClassLoader().getResourceAsStream("javaBean.properties");
 		prop.load(is);
 		is.close();
-		User user = (User)Class.forName((String)prop.getProperty("beanName")).newInstance();
-
+		//User user = (User)Class.forName((String)prop.getProperty("beanName")).newInstance();
+		System.out.println(prop.getProperty("BeanName"));
 	}
 
 }

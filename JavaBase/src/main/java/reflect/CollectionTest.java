@@ -14,7 +14,7 @@ public class CollectionTest {
 
 	public static void main(String[] args) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException {
 		// TODO Auto-generated method stub
-		InputStream is = new FileInputStream("src/reflect/config.properties");
+		InputStream is = new FileInputStream("src/main/java/reflect/config.properties");
 		Properties prop = new Properties();
 		prop.load(is);
 		is.close();
