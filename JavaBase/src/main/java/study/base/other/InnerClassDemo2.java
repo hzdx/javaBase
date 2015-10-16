@@ -12,8 +12,7 @@ class Outer
 		{
 			void function()
 			{
-				System.out.println(y); //�ڲ��ඨ���ھֲ�ʱ�����ɱ���Ա���η����Σ����Է����ⲿ���еĳ�Ա��
-									   //�������Է��������ڵľֲ��еı�����ֻ�ܷ��ʱ�final���εľֲ�������
+				System.out.println(y); 
 			}
 		}
 		new Inner().function();

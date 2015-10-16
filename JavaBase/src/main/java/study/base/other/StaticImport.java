@@ -1,9 +1,15 @@
 package study.base.other;
 import static java.lang.System.out;
+
 import static java.util.Arrays.binarySearch;
 import static java.util.Arrays.sort;
 
 import java.util.Arrays;
+/**
+ * 
+ * StaticImport
+ * 静态导入
+ */
 class StaticImport 
 {
 	public static void main(String[] args)

@@ -5,11 +5,7 @@ class demo1
 	public static void main(String [] args)
 	{
 		toHex(-60);	
-	
-	
-	
-	
-	
+		
 	}
 	public static void toHex(int num)
 	{
