@@ -6,26 +6,26 @@ class TreeSetDemo2
 	public static void main(String[] args)
 	{
 		TreeSet ts = new TreeSet();
-		ts.add(new Student("zhangsan",17));
-		ts.add(new Student("lisi",17));
-		ts.add(new Student("jack",18));
-		ts.add(new Student("tom",22));
-		ts.add(new Student("leo",20));
-		ts.add(new Student("leo",20));
+		ts.add(new NewStu("zhangsan",17));
+		ts.add(new NewStu("lisi",17));
+		ts.add(new NewStu("jack",18));
+		ts.add(new NewStu("tom",22));
+		ts.add(new NewStu("leo",20));
+		ts.add(new NewStu("leo",20));
 		Iterator it = ts.iterator();
 		while(it.hasNext())
 		{
-			Student stu = (Student)it.next();
+			NewStu stu = (NewStu)it.next();
 			System.out.println(stu.getName()+"...."+stu.getAge());
 		}
 	}
 }
 
-class Student implements Comparable//��ӿ�ǿ����Student�߱��Ƚ���
+class NewStu implements Comparable//��ӿ�ǿ����Student�߱��Ƚ���
 {
 	private String name;
 	private int age;
-	Student(String name,int age)
+	NewStu(String name,int age)
 	{
 		this.name = name;
 		this.age = age;
@@ -33,9 +33,9 @@ class Student implements Comparable//��ӿ�ǿ����Student�߱��
 	public int compareTo(Object obj)
 	{
 		//return 0;
-		if(!(obj instanceof Student))
+		if(!(obj instanceof NewStu))
 			throw new RuntimeException("����ѧ�����");
-		Student s =(Student)obj;
+		NewStu s =(NewStu)obj;
 		if(this.age>s.age)
 			return 1;
 		if(this.age==s.age)

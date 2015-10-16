@@ -24,7 +24,7 @@ class ExceptionDemo31
 
 class  ExceptionDemo3
 {
-	public static void main(String[] args) throws FuShuException 
+	public static void main(String[] args) throws MyFuShuException 
 	{
 		Demo d = new Demo();
 		int x = d.div(3,0);

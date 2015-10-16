@@ -14,7 +14,7 @@ class Test extends Thread
 	}
 }
 
-class ThreadTest
+class ThreadTest1
 {
 	public static void main(String[] args)
 	{

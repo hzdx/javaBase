@@ -5,11 +5,12 @@ package study.base.exception;
 
 */
 
-class FuShuException extends Exception
+@SuppressWarnings("serial")
+class MyFuShuException extends Exception
 {
 	private String msg;
 	//private int value;
-	FuShuException(String msg) 
+	MyFuShuException(String msg) 
 	{
 		super(msg);
 	}
@@ -24,10 +25,10 @@ class FuShuException extends Exception
 
 class Demo
 {
-	int div(int a,int b) throws FuShuException
+	int div(int a,int b) throws MyFuShuException
 	{
 		if(b<0)
-			throw new FuShuException("锟斤拷锟斤拷为锟斤拷"); //锟街讹拷通锟斤拷throw锟阶筹拷锟皆讹拷锟斤拷锟届常锟斤拷锟斤拷
+			throw new MyFuShuException("锟斤拷锟斤拷为锟斤拷"); //锟街讹拷通锟斤拷throw锟阶筹拷锟皆讹拷锟斤拷锟届常锟斤拷锟斤拷
 		return a/b;
 	}
 }
@@ -42,7 +43,7 @@ class  ExceptionDemo2
 			int x = d.div(4,-2);
 			System.out.println("x="+x);
 		}
-		catch (FuShuException e)
+		catch (MyFuShuException e)
 		{
 			System.out.println(e.toString());
 			System.out.println(e.getMessage());

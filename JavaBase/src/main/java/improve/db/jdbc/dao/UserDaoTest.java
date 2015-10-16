@@ -1,8 +1,7 @@
 package improve.db.jdbc.dao;
 
-import java.util.Date;
+import improve.db.jdbc.domain.User;
 
-import jdbc.domain.User;
 
 /**
  * 

@@ -1,6 +1,6 @@
 package study.base.thread;
 
-class Demo implements Runnable
+class YieldDemo implements Runnable
 {
 	public void run()
 	{
@@ -16,7 +16,7 @@ class JoinDemo
 {
 	public static void main(String[] args) throws Exception
 	{
-		Demo d = new Demo();
+		YieldDemo d = new YieldDemo();
 		Thread t1 = new Thread(d);
 		Thread t2 = new Thread(d);
 		t1.start();

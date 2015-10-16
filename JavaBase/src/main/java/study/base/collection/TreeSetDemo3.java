@@ -6,7 +6,7 @@ class TreeSetDemo3
 {
 	public static void main(String[] args)
 	{	
-		TreeSet ts = new TreeSet(new MyCompare());//���ȱȽ����Ƚϡ�
+		TreeSet ts = new TreeSet(new MyComparator());//���ȱȽ����Ƚϡ�
 		ts.add(new Student("lisi",17));
 		ts.add(new Student("jack",18));
 		ts.add(new Student("tom",22));
@@ -24,7 +24,7 @@ class TreeSetDemo3
 
 
 
-class MyCompare implements Comparator
+class MyComparator implements Comparator
 {
 	public int compare(Object o1,Object o2)
 	{

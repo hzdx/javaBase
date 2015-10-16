@@ -22,7 +22,7 @@ class RegexDemo
 		int len = qq.length();
 		if(len>=5 && len<=15)
 		{
-			if(!qq.startsWith(("0"))
+			if(!qq.startsWith("0"))
 			{
 				char[] arr;
 			}

@@ -3,7 +3,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-import study.base.collection.Student;
 class Person
 {
 	private String name;
@@ -53,7 +52,7 @@ class GenericDemo4
 {
 	public static void main(String[] args)
 	{
-		TreeSet<Person> ts = new TreeSet<Person>(new StuComp());
+		TreeSet<Person> ts = new TreeSet<Person>();
 		ts.add(new Student("fafadis2"));
 		ts.add(new Worker("dds2"));
 		ts.add(new Student("ae2"));

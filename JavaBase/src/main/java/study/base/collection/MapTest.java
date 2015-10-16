@@ -3,16 +3,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-class Student implements Comparable<Student>
+class Stu implements Comparable<Stu>
 {
 	private String name;
 	private int age;
-	Student(String name,int age)
+	Stu(String name,int age)
 	{
 		this.name = name;
 		this.age = age;
 	}
-	public int compareTo(Student s)
+	public int compareTo(Stu s)
 	{
 		int num = new Integer(this.age).compareTo(new Integer(s.age));
 		if(num==0)
@@ -25,9 +25,9 @@ class Student implements Comparable<Student>
 	}
 	public boolean equals(Object obj)
 	{
-		if(!(obj instanceof Student))
+		if(!(obj instanceof Stu))
 			throw new ClassCastException("���Ͳ�ƥ��");
-		Student s = (Student)obj;
+		Stu s = (Stu)obj;
 		return this.name.equals(s.name) && this.age==s.age;
 	}
 	public String getName()
@@ -47,16 +47,16 @@ class MapTest
 {
 	public static void main(String[] args)
 	{
-		Map<Student,String> map = new HashMap<Student,String>();
-		map.put(new Student("jwi",21),"Beijing");
-		map.put(new Student("jwi",21),"xian");
-		map.put(new Student("isjfi",19),"shanghai");
-		map.put(new Student("wwwi",22),"london");
-		Set<Student> keySet = map.keySet();
-		Iterator<Student> it = keySet.iterator();
+		Map<Stu,String> map = new HashMap<Stu,String>();
+		map.put(new Stu("jwi",21),"Beijing");
+		map.put(new Stu("jwi",21),"xian");
+		map.put(new Stu("isjfi",19),"shanghai");
+		map.put(new Stu("wwwi",22),"london");
+		Set<Stu> keySet = map.keySet();
+		Iterator<Stu> it = keySet.iterator();
 		while(it.hasNext())
 		{
-			Student s = it.next();
+			Stu s = it.next();
 			
 			String addr = map.get(s);
 			System.out.println("Student:"+s+"...address:"+addr);

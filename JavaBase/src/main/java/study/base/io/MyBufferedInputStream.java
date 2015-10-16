@@ -1,4 +1,5 @@
 package study.base.io;
+import java.io.IOException;
 import java.io.InputStream;
 class MyBufferedInputStream
 {
@@ -9,7 +10,7 @@ class MyBufferedInputStream
 	{
 		this.in = in;
 	}
-	public int myRead()
+	public int myRead() throws IOException
 	{
 		if(count==0)
 		{
@@ -31,7 +32,7 @@ class MyBufferedInputStream
 		}
 		return -1;
 	}
-	public void myClose()
+	public void myClose() throws IOException
 	{
 		in.close();
 	}
