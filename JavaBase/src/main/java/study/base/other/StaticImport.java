@@ -1,4 +1,4 @@
-package study.base.util;
+package study.base.other;
 import static java.lang.System.out;
 import static java.util.Arrays.binarySearch;
 import static java.util.Arrays.sort;

@@ -1,12 +1,12 @@
 package study.base.exception;
 
 /*
-����ʦ�õ����ϿΡ�
-��ʼ˼���Ͽ��г��ֵ����⡣
-���磺
-��������
-����ð��
-Ҫ�����������������װ�ɶ���
+毕老师用电脑上课。
+开始思考上课中出现的问题。
+比如：
+电脑蓝屏
+电脑冒烟
+要对问题进行描述，封装成对象。
 
 */
 
@@ -40,9 +40,9 @@ class Computer
 	public void run() throws LanPingException,MaoYanException
 	{
 		if(state==2)
-			throw new LanPingException("������");
+			throw new LanPingException("langping");
 		if(state==3)
-			throw new MaoYanException("ð����");
+			throw new MaoYanException("maoyan");
 		System.out.println("computer run");
 	}
 	public void reset()
@@ -76,7 +76,7 @@ class Teacher
 		catch (MaoYanException e)
 		{
 			test();
-			throw new NoPlanException("��ʱ�޷�����"+e.getMessage());
+			throw new NoPlanException("maoyan"+e.getMessage());
 			
 		}
 		System.out.println("over");
@@ -93,7 +93,7 @@ class ExceptionTest
 {
 	public static void main(String[] args) 
 	{
-		Teacher t = new Teacher("����ʦ");
+		Teacher t = new Teacher("aaa");
 		try
 		{
 			t.prelect();
@@ -101,7 +101,7 @@ class ExceptionTest
 		catch (NoPlanException e)
 		{
 			System.out.println(e.toString());
-			System.out.println("����ʦ���߷ż�");
+			System.out.println("nopan");
 		}
 	}
 }

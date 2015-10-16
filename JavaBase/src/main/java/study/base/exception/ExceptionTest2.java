@@ -1,12 +1,11 @@
 package study.base.exception;
 
 /*
-��һ��Բ�κͳ����Ρ�
-�����Ի�ȡ�����������ַǷ�ֵ����Ϊ��ȡ���������⡣
+有一个圆形和长方形。
+都可以获取面积。如果面积出现非法值，视为获取面积出现问题。
 
-����ͨ���쳣����ʾ��
-���ж����������л���ơ�
-
+问题通过异常来表示。
+现有对这个程序进行基本设计。
 */
 
 class NoValueException extends RuntimeException
@@ -28,7 +27,7 @@ class Rec implements Shape
 	Rec(int len, int wid)
 	{
 		if(len <= 0||wid<=0)	
-			throw new NoValueException("���ַǷ�ֵ");
+			throw new NoValueException("出现非法值");
 		
 		
 		this.len = len;

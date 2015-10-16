@@ -19,7 +19,7 @@ class Person
 		return "person:"+name;
 	}
 }
-class Student extends Person
+class Student extends Person implements Comparable<Student>
 {
 	Student(String name)
 	{
@@ -29,6 +29,12 @@ class Student extends Person
 	{
 		return "student:"+getName();
 	}
+  
+  @Override
+  public int compareTo(Student o) {
+    // TODO Auto-generated method stub
+    return 0;
+  }
 }
 class Worker extends Person
 {

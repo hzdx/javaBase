@@ -5,7 +5,7 @@ class EncodeDemo
 {
 	public static void main(String[] args) throws Exception
 	{
-		String s = "���";
+		String s = "aaa";
 		byte[] b1 = s.getBytes("GBK");
 		System.out.println(Arrays.toString(b1));
 		String s1= new String(b1,"utf-8");

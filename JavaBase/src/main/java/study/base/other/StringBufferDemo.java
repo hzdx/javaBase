@@ -1,4 +1,4 @@
-package study.base.util;
+package study.base.other;
 class StringBufferDemo
 {
 	public static void sop(String str)
