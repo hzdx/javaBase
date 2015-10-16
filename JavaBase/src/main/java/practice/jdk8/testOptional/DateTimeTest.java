@@ -10,6 +10,7 @@ import java.time.ZonedDateTime;
 public class DateTimeTest {
 
   public static void main(String[] args) {
+ // Get the system clock as UTC offset
     final Clock clock = Clock.systemUTC();
     System.out.println( clock.instant() );
     System.out.println( clock.millis() );
