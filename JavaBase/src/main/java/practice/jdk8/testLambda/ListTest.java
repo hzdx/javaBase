@@ -21,6 +21,7 @@ public class ListTest {
       });
     
     //consumer(){} 功能性接口,只有一个accept方法，jdk8新增，为了使用lambda表达式。
+    //@FunctionalInterface标注，只有一个接口，为了使用lambda表达式而创建
     list.forEach(new Consumer() {
 
       @Override
