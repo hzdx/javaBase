@@ -2,8 +2,6 @@ package practice.jdk8.testLambda;
 
 import java.awt.Button;
 import java.awt.Frame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FrameLambdaTest {
 
