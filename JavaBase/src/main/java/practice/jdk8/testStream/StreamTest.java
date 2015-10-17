@@ -11,7 +11,7 @@ public class StreamTest {
 		list.add("aaa");
 		list.add(1);
 		Stream<Object> stream = list.stream();
-		stream.forEach(s->System.out.println(s.toString()));
+		stream.forEach(s -> System.out.println(s.toString()));
 
 	}
 

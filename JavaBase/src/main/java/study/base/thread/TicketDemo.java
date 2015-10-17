@@ -1,29 +1,24 @@
 package study.base.thread;
 
-class  Ticket implements Runnable
-{
+class Ticket implements Runnable {
 	private static int tick = 1000;
 	Object obj = new Object();
-	public void run()
-	{
-		while(true)
-		{
-			synchronized(obj)
-			{
-				if(tick>0)
-				{
-					//try{Thread.sleep(10);}catch(Exception e){}
-					System.out.println(Thread.currentThread().getName()+"...sale:"+tick--);
+
+	public void run() {
+		while (true) {
+			synchronized (obj) {
+				if (tick > 0) {
+					// try{Thread.sleep(10);}catch(Exception e){}
+					System.out.println(Thread.currentThread().getName()
+							+ "...sale:" + tick--);
 				}
 			}
 		}
 	}
 }
 
-class TicketDemo
-{
-	public static void main(String[] args)
-	{
+class TicketDemo {
+	public static void main(String[] args) {
 		Ticket t = new Ticket();
 		Thread t1 = new Thread(t);
 		Thread t2 = new Thread(t);

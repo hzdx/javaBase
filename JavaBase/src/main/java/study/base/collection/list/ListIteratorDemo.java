@@ -1,18 +1,18 @@
 package study.base.collection.list;
+
 import java.util.ArrayList;
 import java.util.ListIterator;
-class ListIteratorDemo
-{
-	public static void sop(Object obj)
-	{
+
+class ListIteratorDemo {
+	public static void sop(Object obj) {
 		System.out.println(obj);
 	}
-	public static void main(String[] args)
-	{
+
+	public static void main(String[] args) {
 		method();
 	}
-	public static void method()
-	{
+
+	public static void method() {
 		ArrayList al = new ArrayList();
 		al.add("java01");
 		al.add("java02");
@@ -20,20 +20,18 @@ class ListIteratorDemo
 		al.add("java04");
 		sop(al);
 		ListIterator li = al.listIterator();
-		while(li.hasNext())
-		{
+		while (li.hasNext()) {
 			Object obj = li.next();
-			if(obj.equals("java03"))
+			if (obj.equals("java03"))
 				li.add("java05");
-			if(obj.equals("java04"))
+			if (obj.equals("java04"))
 				li.set("java06");
 		}
 		sop(al);
-		//hasPrevious与hasNext相反
-		while(li.hasPrevious())
-		{
+		// hasPrevious与hasNext相反
+		while (li.hasPrevious()) {
 			Object obj = li.previous();
-			sop("obj= "+obj);
+			sop("obj= " + obj);
 		}
 	}
 }

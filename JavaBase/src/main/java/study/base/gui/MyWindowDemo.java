@@ -21,7 +21,7 @@ class MyWindowDemo {
 	private Button but;
 	private TextArea ta;
 	private Dialog d;
-	private Label lab;  //��ʾ��  d.add(lab);
+	private Label lab; // ��ʾ�� d.add(lab);
 	private Button okBut;
 
 	MyWindowDemo() {

@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
-
 public final class JdbcUtils {
 	private static String url = "jdbc:mysql://localhost:3306/demo";
 	private static String user = "root";

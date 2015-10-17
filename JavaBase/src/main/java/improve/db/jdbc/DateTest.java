@@ -40,7 +40,7 @@ public class DateTest {
 
 			// 5.������
 			while (rs.next()) {
-				//birthday = new Date(rs.getDate("birthday").getTime());
+				// birthday = new Date(rs.getDate("birthday").getTime());
 				birthday = rs.getDate("birthday");
 			}
 		} finally {

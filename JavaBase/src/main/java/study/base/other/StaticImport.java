@@ -1,24 +1,23 @@
 package study.base.other;
+
 import static java.lang.System.out;
 
 import static java.util.Arrays.binarySearch;
 import static java.util.Arrays.sort;
 
 import java.util.Arrays;
+
 /**
  * 
- * StaticImport
- * 静态导入
+ * StaticImport 静态导入
  */
-class StaticImport 
-{
-	public static void main(String[] args)
-	{
+class StaticImport {
+	public static void main(String[] args) {
 		out.println("haha");
-		int[] arr = {3,1,5};
+		int[] arr = { 3, 1, 5 };
 		sort(arr);
-		int index = binarySearch(arr,1);
+		int index = binarySearch(arr, 1);
 		out.println(Arrays.toString(arr));
-		System.out.println("Index="+index);
+		System.out.println("Index=" + index);
 	}
 }

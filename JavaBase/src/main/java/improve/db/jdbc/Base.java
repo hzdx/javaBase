@@ -17,7 +17,7 @@ public class Base {
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		template(); 
+		template();
 
 	}
 

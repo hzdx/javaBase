@@ -2,7 +2,7 @@ package practice.reflect.proxy;
 
 import java.lang.reflect.Method;
 
-public interface AbstractHandler{
+public interface AbstractHandler {
 
 	public abstract Object invoke(Object obj, Method method, Object[] args)
 			throws Throwable;

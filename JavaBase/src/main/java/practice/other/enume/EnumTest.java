@@ -1,6 +1,8 @@
 package practice.other.enume;
+
 /**
  * 枚举基本应用
+ * 
  * @author ldm
  *
  */
@@ -13,49 +15,54 @@ public class EnumTest {
 		System.out.println(WeekDay.valueOf("FRI"));
 		System.out.println(WeekDay.values().length);
 		System.out.println(WeekDay.FRI.ordinal());
-		
+
 	}
-	
-	public enum WeekDay{
-		/*SUM,MON,THI,THU,FRI,SUM*/
+
+	public enum WeekDay {
+		/* SUM,MON,THI,THU,FRI,SUM */
 		SUM {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
 			}
-		},MON{
+		},
+		MON {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
 			}
-		},THI {
+		},
+		THI {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
 			}
-		},THU{
+		},
+		THU {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
 			}
-		},FRI{
+		},
+		FRI {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return "星期五";
 			}
-		},SUN{
+		},
+		SUN {
 			@Override
 			public String toString() {
 				// TODO Auto-generated method stub
 				return null;
-		}
+			}
 		};
-			//调用的无参构造方法
+		// 调用的无参构造方法
 		public abstract String toString();
 	}
 

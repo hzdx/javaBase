@@ -12,11 +12,11 @@ public class Example {
 		// 参考答案输出结果：goodandgbc
 	}
 
-	//传值传的只是指针的拷贝，Java无法改变指针的地址。
+	// 传值传的只是指针的拷贝，Java无法改变指针的地址。
 	public void change(String str, char ch[]) {
-		//str是指针的拷贝指向了另外的地址，java是无法改变指针的地址的。
+		// str是指针的拷贝指向了另外的地址，java是无法改变指针的地址的。
 		str = "test ok";
-		//ch改变了对象内部的元素，所有原来指针指向的对象内部改变了。
+		// ch改变了对象内部的元素，所有原来指针指向的对象内部改变了。
 		ch[0] = 'g';
 	}
 }

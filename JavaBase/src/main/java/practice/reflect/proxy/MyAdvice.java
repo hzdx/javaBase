@@ -6,15 +6,16 @@ public class MyAdvice implements Advice {
 	long beginTime = 0;
 
 	@Override
-	public void beforeMethod(Method method){
+	public void beforeMethod(Method method) {
 		beginTime = System.currentTimeMillis();
 		System.out.println("beform method performed!");
 	}
 
 	@Override
-	public void afterMethod(Method method){
+	public void afterMethod(Method method) {
 		System.out.println("after method performed");
-		System.out.println(method.getName()+" cost time:"+(System.currentTimeMillis()-beginTime));
+		System.out.println(method.getName() + " cost time:"
+				+ (System.currentTimeMillis() - beginTime));
 	}
 
 }

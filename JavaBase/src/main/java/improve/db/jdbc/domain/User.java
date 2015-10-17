@@ -12,7 +12,7 @@ public class User {
 	private String name;
 	private Date birthday;
 	private float money;
-	
+
 	public int getId() {
 		return id;
 	}

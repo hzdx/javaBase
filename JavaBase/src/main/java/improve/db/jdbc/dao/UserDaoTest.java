@@ -2,7 +2,6 @@ package improve.db.jdbc.dao;
 
 import improve.db.jdbc.domain.User;
 
-
 /**
  * 
  * 
@@ -15,7 +14,7 @@ public class UserDaoTest {
 	public static void main(String[] args) {
 		UserDao userDao = DaoFactory.getInstance().getUserDao();
 		// System.out.println(userDao);
-		//		
+		//
 		// User user = new User();
 		// user.setBirthday(new Date());
 		// user.setName("dao name1");
