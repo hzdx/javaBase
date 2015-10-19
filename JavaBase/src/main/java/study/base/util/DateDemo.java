@@ -8,7 +8,7 @@ class DateDemo {
 		Date d = new Date();
 		System.out.println(d);
 		SimpleDateFormat sdf = new SimpleDateFormat(
-				"yyyy��MM��dd��E hh:mm:ss");
+				"yyyy:MM:dd hh:mm:ss");
 		String time = sdf.format(d);
 		System.out.println("time=" + time);
 		long l = System.currentTimeMillis();
