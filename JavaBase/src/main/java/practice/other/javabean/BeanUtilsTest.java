@@ -1,10 +1,11 @@
 package practice.other.javabean;
 
+import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.PropertyUtils;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
-import org.apache.commons.beanutils.BeanUtils;
-import org.apache.commons.beanutils.PropertyUtils;
 
 /**
  * 引入beanutils包和logging包来操作javaBean属性 javaBean的类必须声明为public才能成功
