@@ -3,175 +3,174 @@ package study.base;
 import java.util.Arrays;
 
 /**
- * javaÊµÏÖ¸÷ÖÖÅÅĞòËã·¨
- * 
- * @author ldm
+ * javaå®ç°å„ç§æ’åºç®—æ³•
  *
+ * @author ldm
  */
 public class SortTest {
 
-  public static void main(String[] args) {
-    int arr[] = {4, 8, 2, 0, 12, 1, 88};
-    System.out.println(Arrays.toString(arr)); // Arrays.toString ·½·¨´òÓ¡Êı×é.
-    // selectSort(arr);
-    // bubbleSort(arr);
-    // quickSort(arr,0,arr.length-1);
-    heapSort(arr);
-    System.out.println(Arrays.toString(arr));
-  }
+    public static void main(String[] args) {
+        int arr[] = {4, 8, 2, 0, 12, 1, 88};
+        System.out.println(Arrays.toString(arr)); // Arrays.toString æ–¹æ³•æ‰“å°æ•°ç»„.
+        // selectSort(arr);
+        // bubbleSort(arr);
+        // quickSort(arr,0,arr.length-1);
+        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
 
-  private static void swap(int[] arr, int x, int y) {
-    int temp = arr[x];
-    arr[x] = arr[y];
-    arr[y] = temp;
-  }
+    private static void swap(int[] arr, int x, int y) {
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
+    }
 
-  /**
-   * Ñ¡ÔñÅÅĞò,o(n^2)
-   */
-  public static void selectSort(int[] arr) {
-    for (int x = 0; x < arr.length - 1; x++) {
-      for (int y = x + 1; y < arr.length; y++) {
-        if (arr[x] > arr[y]) {
-          swap(arr, x, y);
+    /**
+     * é€‰æ‹©æ’åº,o(n^2)
+     */
+    public static void selectSort(int[] arr) {
+        for (int x = 0; x < arr.length - 1; x++) {
+            for (int y = x + 1; y < arr.length; y++) {
+                if (arr[x] > arr[y]) {
+                    swap(arr, x, y);
+                }
+            }
         }
-      }
     }
-  }
 
-  /**
-   * Ã°ÅİÅÅĞò,o(n^2)
-   */
-  public static void bubbleSort(int[] arr) {
-    for (int x = arr.length - 1; x > 0; x--) {
-      for (int y = x - 1; y >= 0; y--) {
-        if (arr[x] < arr[y]) {
-          int temp = arr[x];
-          arr[x] = arr[y];
-          arr[y] = temp;
+    /**
+     * å†’æ³¡æ’åº,o(n^2)
+     */
+    public static void bubbleSort(int[] arr) {
+        for (int x = arr.length - 1; x > 0; x--) {
+            for (int y = x - 1; y >= 0; y--) {
+                if (arr[x] < arr[y]) {
+                    int temp = arr[x];
+                    arr[x] = arr[y];
+                    arr[y] = temp;
+                }
+            }
         }
-      }
-    }
-  }
-
-  /**
-   * ¿ìËÙÅÅĞò,o(nlogn)<br>
-   * (Í¨³£Ñ¡ÓÃÊı×éµÄµÚÒ»¸öÊı£©×÷Îª¹Ø¼üÊı¾İ£¬È»ºó½«ËùÓĞ±ÈËüĞ¡µÄÊı¶¼·Åµ½ËüÇ°Ãæ£¬<br>
-   * ËùÓĞ±ÈËü´óµÄÊı¶¼·Åµ½ËüºóÃæ£¬Õâ¸ö¹ı³Ì³ÆÎªÒ»ÌË¿ìËÙÅÅĞò¡£
-   */
-  public static void quickSort(int a[], int low, int high) {
-    if (low >= high)
-      return;
-    int first = low;
-    int last = high;
-    int key = a[first];/* ÓÃ×Ö±íµÄµÚÒ»¸ö¼ÇÂ¼×÷ÎªÊàÖá */
-    while (first < last) {
-      while (first < last && a[last] >= key)
-        last--;
-      a[first] = a[last];/* ½«±ÈµÚÒ»¸öĞ¡µÄÒÆµ½µÍ¶Ë */
-      while (first < last && a[first] <= key)
-        first++;
-      a[last] = a[first];/* ½«±ÈµÚÒ»¸ö´óµÄÒÆµ½¸ß¶Ë */
-    }
-    a[first] = key;/* ÊàÖá¼ÇÂ¼µ½Î» */
-    quickSort(a, low, first - 1);
-    quickSort(a, first + 1, high);
-  }
-
-  /**
-   * ¶ÑÅÅĞò,o(nlogn)<br>
-   * ¶ÑÅÅĞò»á½«ËùÓĞµÄÊı¾İ½¨³ÉÒ»¸ö¶Ñ£¬×î´óµÄÊı¾İÔÚ¶Ñ¶¥£¬<br>
-   * È»ºó½«¶Ñ¶¥Êı¾İºÍĞòÁĞµÄ×îºóÒ»¸öÊı¾İ½»»»¡£½ÓÏÂÀ´ÔÙ´ÎÖØ½¨¶Ñ£¬<br>
-   * ½»»»Êı¾İ£¬ÒÀ´ÎÏÂÈ¥£¬¾Í¿ÉÒÔÅÅĞòËùÓĞµÄÊı¾İ¡£
-   */
-  public static void heapSort(int[] array) {
-    if (array == null || array.length <= 1) {
-      return;
-    }
-    buildMaxHeap(array);
-    for (int i = array.length - 1; i >= 1; i--) {
-      swap(array, 0, i);
-      maxHeap(array, i, 0);
-    }
-  }
-
-  private static void buildMaxHeap(int[] array) {
-    if (array == null || array.length <= 1) {
-      return;
-    }
-    int half = array.length / 2;
-    for (int i = half; i >= 0; i--) {
-      maxHeap(array, array.length, i);
-    }
-  }
-
-  private static void maxHeap(int[] array, int heapSize, int index) {
-    int left = index * 2 + 1;
-    int right = index * 2 + 2;
-    int largest = index;
-    if (left < heapSize && array[left] > array[index]) {
-      largest = left;
     }
 
-    if (right < heapSize && array[right] > array[largest]) {
-      largest = right;
+    /**
+     * å¿«é€Ÿæ’åº,o(nlogn)<br>
+     * (é€šå¸¸é€‰ç”¨æ•°ç»„çš„ç¬¬ä¸€ä¸ªæ•°ï¼‰ä½œä¸ºå…³é”®æ•°æ®ï¼Œç„¶åå°†æ‰€æœ‰æ¯”å®ƒå°çš„æ•°éƒ½æ”¾åˆ°å®ƒå‰é¢ï¼Œ<br>
+     * æ‰€æœ‰æ¯”å®ƒå¤§çš„æ•°éƒ½æ”¾åˆ°å®ƒåé¢ï¼Œè¿™ä¸ªè¿‡ç¨‹ç§°ä¸ºä¸€è¶Ÿå¿«é€Ÿæ’åºã€‚
+     */
+    public static void quickSort(int a[], int low, int high) {
+        if (low >= high)
+            return;
+        int first = low;
+        int last = high;
+        int key = a[first];/* ç”¨å­—è¡¨çš„ç¬¬ä¸€ä¸ªè®°å½•ä½œä¸ºæ¢è½´ */
+        while (first < last) {
+            while (first < last && a[last] >= key)
+                last--;
+            a[first] = a[last];/* å°†æ¯”ç¬¬ä¸€ä¸ªå°çš„ç§»åˆ°ä½ç«¯ */
+            while (first < last && a[first] <= key)
+                first++;
+            a[last] = a[first];/* å°†æ¯”ç¬¬ä¸€ä¸ªå¤§çš„ç§»åˆ°é«˜ç«¯ */
+        }
+        a[first] = key;/* æ¢è½´è®°å½•åˆ°ä½ */
+        quickSort(a, low, first - 1);
+        quickSort(a, first + 1, high);
     }
 
-    if (index != largest) {
-      swap(array, index, largest);
-      maxHeap(array, heapSize, largest);
+    /**
+     * å †æ’åº,o(nlogn)<br>
+     * å †æ’åºä¼šå°†æ‰€æœ‰çš„æ•°æ®å»ºæˆä¸€ä¸ªå †ï¼Œæœ€å¤§çš„æ•°æ®åœ¨å †é¡¶ï¼Œ<br>
+     * ç„¶åå°†å †é¡¶æ•°æ®å’Œåºåˆ—çš„æœ€åä¸€ä¸ªæ•°æ®äº¤æ¢ã€‚æ¥ä¸‹æ¥å†æ¬¡é‡å»ºå †ï¼Œ<br>
+     * äº¤æ¢æ•°æ®ï¼Œä¾æ¬¡ä¸‹å»ï¼Œå°±å¯ä»¥æ’åºæ‰€æœ‰çš„æ•°æ®ã€‚
+     */
+    public static void heapSort(int[] array) {
+        if (array == null || array.length <= 1) {
+            return;
+        }
+        buildMaxHeap(array);
+        for (int i = array.length - 1; i >= 1; i--) {
+            swap(array, 0, i);
+            maxHeap(array, i, 0);
+        }
     }
-  }
-  // public static void heapSort(int[] data) {
-  // // ¹¹½¨×î´ó¶Ñ
-  // buildMaxHeap(data);
-  // // Ñ­»·£¬Ã¿´Î°Ñ¸ù½ÚµãºÍ×îºóÒ»¸ö½Úµãµ÷»»Î»ÖÃ
-  // for (int i = data.length; i > 1; i--) {
-  // int tmp = data[0];
-  // data[0] = data[i - 1];
-  // data[i - 1] = tmp;
-  //
-  // // ¶ÑµÄ³¤¶È¼õÉÙ1£¬ÅÅ³ıÖÃ»»µ½×îºóÎ»ÖÃµÄ¸ù½Úµã
-  // maxHeapify(data, 1, i - 1);
-  // }
-  // }
-  //
-  // // ¸ù¾İÊäÈëÊı×é¹¹½¨Ò»¸ö×î´ó¶Ñ
-  // private static void buildMaxHeap(int[] data) {
-  // for (int i = data.length / 2; i > 0; i--) {
-  // maxHeapify(data, i, data.length);
-  // }
-  // }
-  //
-  // // ¶Ñµ÷Õû£¬Ê¹ÆäÉú³É×î´ó¶Ñ
-  // private static void maxHeapify(int[] data, int parentNodeIndex, int heapSize) {
-  // // ×ó×Ó½ÚµãË÷Òı
-  // int leftChildNodeIndex = parentNodeIndex * 2;
-  // // ÓÒ×Ó½ÚµãË÷Òı
-  // int rightChildNodeIndex = parentNodeIndex * 2 + 1;
-  // // ×î´ó½ÚµãË÷Òı
-  // int largestNodeIndex = parentNodeIndex;
-  //
-  // // Èç¹û×ó×Ó½Úµã´óÓÚ¸¸½Úµã£¬Ôò½«×ó×Ó½Úµã×÷Îª×î´ó½Úµã
-  // if (leftChildNodeIndex <= heapSize
-  // && data[leftChildNodeIndex - 1] - (data[parentNodeIndex - 1]) > 0) {
-  // largestNodeIndex = leftChildNodeIndex;
-  // }
-  //
-  // // Èç¹ûÓÒ×Ó½Úµã±È×î´ó½Úµã»¹´ó£¬ÄÇÃ´×î´ó½ÚµãÓ¦¸ÃÊÇÓÒ×Ó½Úµã
-  // if (rightChildNodeIndex <= heapSize
-  // && data[rightChildNodeIndex - 1] - (data[largestNodeIndex - 1]) > 0) {
-  // largestNodeIndex = rightChildNodeIndex;
-  // }
-  //
-  // // ×îºó£¬Èç¹û×î´ó½ÚµãºÍ¸¸½Úµã²»Ò»ÖÂ£¬Ôò½»»»ËûÃÇµÄÖµ
-  // if (largestNodeIndex != parentNodeIndex) {
-  // int tmp = data[parentNodeIndex - 1];
-  // data[parentNodeIndex - 1] = data[largestNodeIndex - 1];
-  // data[largestNodeIndex - 1] = tmp;
-  //
-  // // ½»»»Íê¸¸½ÚµãºÍ×Ó½ÚµãµÄÖµ£¬¶Ô»»ÁËÖµµÄ×Ó½Úµã¼ì²éÊÇ·ñ·ûºÏ×î´ó¶ÑµÄÌØĞÔ
-  // maxHeapify(data, largestNodeIndex, heapSize);
-  // }
-  // }
+
+    private static void buildMaxHeap(int[] array) {
+        if (array == null || array.length <= 1) {
+            return;
+        }
+        int half = array.length / 2;
+        for (int i = half; i >= 0; i--) {
+            maxHeap(array, array.length, i);
+        }
+    }
+
+    private static void maxHeap(int[] array, int heapSize, int index) {
+        int left = index * 2 + 1;
+        int right = index * 2 + 2;
+        int largest = index;
+        if (left < heapSize && array[left] > array[index]) {
+            largest = left;
+        }
+
+        if (right < heapSize && array[right] > array[largest]) {
+            largest = right;
+        }
+
+        if (index != largest) {
+            swap(array, index, largest);
+            maxHeap(array, heapSize, largest);
+        }
+    }
+    // public static void heapSort(int[] data) {
+    // // æ„å»ºæœ€å¤§å †
+    // buildMaxHeap(data);
+    // // å¾ªç¯ï¼Œæ¯æ¬¡æŠŠæ ¹èŠ‚ç‚¹å’Œæœ€åä¸€ä¸ªèŠ‚ç‚¹è°ƒæ¢ä½ç½®
+    // for (int i = data.length; i > 1; i--) {
+    // int tmp = data[0];
+    // data[0] = data[i - 1];
+    // data[i - 1] = tmp;
+    //
+    // // å †çš„é•¿åº¦å‡å°‘1ï¼Œæ’é™¤ç½®æ¢åˆ°æœ€åä½ç½®çš„æ ¹èŠ‚ç‚¹
+    // maxHeapify(data, 1, i - 1);
+    // }
+    // }
+    //
+    // // æ ¹æ®è¾“å…¥æ•°ç»„æ„å»ºä¸€ä¸ªæœ€å¤§å †
+    // private static void buildMaxHeap(int[] data) {
+    // for (int i = data.length / 2; i > 0; i--) {
+    // maxHeapify(data, i, data.length);
+    // }
+    // }
+    //
+    // // å †è°ƒæ•´ï¼Œä½¿å…¶ç”Ÿæˆæœ€å¤§å †
+    // private static void maxHeapify(int[] data, int parentNodeIndex, int heapSize) {
+    // // å·¦å­èŠ‚ç‚¹ç´¢å¼•
+    // int leftChildNodeIndex = parentNodeIndex * 2;
+    // // å³å­èŠ‚ç‚¹ç´¢å¼•
+    // int rightChildNodeIndex = parentNodeIndex * 2 + 1;
+    // // æœ€å¤§èŠ‚ç‚¹ç´¢å¼•
+    // int largestNodeIndex = parentNodeIndex;
+    //
+    // // å¦‚æœå·¦å­èŠ‚ç‚¹å¤§äºçˆ¶èŠ‚ç‚¹ï¼Œåˆ™å°†å·¦å­èŠ‚ç‚¹ä½œä¸ºæœ€å¤§èŠ‚ç‚¹
+    // if (leftChildNodeIndex <= heapSize
+    // && data[leftChildNodeIndex - 1] - (data[parentNodeIndex - 1]) > 0) {
+    // largestNodeIndex = leftChildNodeIndex;
+    // }
+    //
+    // // å¦‚æœå³å­èŠ‚ç‚¹æ¯”æœ€å¤§èŠ‚ç‚¹è¿˜å¤§ï¼Œé‚£ä¹ˆæœ€å¤§èŠ‚ç‚¹åº”è¯¥æ˜¯å³å­èŠ‚ç‚¹
+    // if (rightChildNodeIndex <= heapSize
+    // && data[rightChildNodeIndex - 1] - (data[largestNodeIndex - 1]) > 0) {
+    // largestNodeIndex = rightChildNodeIndex;
+    // }
+    //
+    // // æœ€åï¼Œå¦‚æœæœ€å¤§èŠ‚ç‚¹å’Œçˆ¶èŠ‚ç‚¹ä¸ä¸€è‡´ï¼Œåˆ™äº¤æ¢ä»–ä»¬çš„å€¼
+    // if (largestNodeIndex != parentNodeIndex) {
+    // int tmp = data[parentNodeIndex - 1];
+    // data[parentNodeIndex - 1] = data[largestNodeIndex - 1];
+    // data[largestNodeIndex - 1] = tmp;
+    //
+    // // äº¤æ¢å®Œçˆ¶èŠ‚ç‚¹å’Œå­èŠ‚ç‚¹çš„å€¼ï¼Œå¯¹æ¢äº†å€¼çš„å­èŠ‚ç‚¹æ£€æŸ¥æ˜¯å¦ç¬¦åˆæœ€å¤§å †çš„ç‰¹æ€§
+    // maxHeapify(data, largestNodeIndex, heapSize);
+    // }
+    // }
 }

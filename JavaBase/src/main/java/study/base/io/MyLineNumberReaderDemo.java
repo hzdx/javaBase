@@ -44,7 +44,7 @@ class MyLineNumberReader {
 
 class MyLineNumberReaderDemo {
 	public static void main(String[] args) throws IOException {
-		FileReader fr = new FileReader("BufferedReaderDemo.java");
+		FileReader fr = new FileReader("c:/temp/words.txt");
 		MyLineNumberReader mylnr = new MyLineNumberReader(fr);
 		String line = null;
 		mylnr.setLineNumber(100);
